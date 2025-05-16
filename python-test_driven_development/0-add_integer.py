@@ -1,11 +1,25 @@
 #!/usr/bin/python3
-def safe_print_list(my_list=[], x=0):
-    count = 0
-    try:
-        for i in range(x):
-            print(my_list[i], end="")
-            count += 1
-    except IndexError:
-        pass
-    print()
-    return count
+"""
+This module provides a function to add two integers.
+"""
+
+def add_integer(a, b=98):
+    """
+    Adds two integers or floats (casted to int).
+
+    Args:
+        a: first number
+        b: second number (default is 98)
+
+    Returns:
+        The sum of a and b as an integer
+
+    Raises:
+        TypeError: if a or b are not int or float
+    """
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
+
+    return int(a) + int(b)
