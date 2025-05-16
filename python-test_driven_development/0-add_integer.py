@@ -25,6 +25,7 @@ def add_integer(a, b=98):
 
     Raises:
         TypeError: if a or b is not int or float
+        OverflowError: if conversion from float to int overflows
 
     Examples:
     >>> add_integer(1, 2)
@@ -48,4 +49,11 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
+
+    try:
+        a = int(a)
+        b = int(b)
+    except OverflowError:
+        raise OverflowError("cannot convert float to integer without overflow")
+
+    return a + b
