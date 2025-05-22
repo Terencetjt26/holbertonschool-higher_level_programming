@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with customizable symbol and instance tracking."""
+"""Defines a class Rectangle with class print_symbol and instance counter."""
 
 
 class Rectangle:
-    """Rectangle class that tracks number of instances and supports custom print symbol."""
+    """Defines a rectangle with width and height, customizable print symbol."""
 
     number_of_instances = 0
     print_symbol = "#"
@@ -48,7 +48,6 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        # Use str() in case print_symbol is not a string (e.g. list)
         symbol = str(self.print_symbol)
         return "\n".join([symbol * self.__width for _ in range(self.__height)])
 
