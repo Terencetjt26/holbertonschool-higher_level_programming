@@ -1,54 +1,68 @@
-#!/usr/bin/python3
-"""Unittest for max_integer([..])"""
-import unittest
-max_integer = __import__('6-max_integer').max_integer
+class Rectangle:
+    """Defines a rectangle."""
 
+    number_of_instances = 0
+    print_symbol = "#"
 
-class TestMaxInteger(unittest.TestCase):
-    def test_ordered_list(self):
-        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+    def __init__(self, width=0, height=0):
+        self.width = width
+        self.height = height
+        Rectangle.number_of_instances += 1
 
-    def test_unordered_list(self):
-        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+    @property
+    def width(self):
+        return self.__width
 
-    def test_max_at_beginning(self):
-        self.assertEqual(max_integer([9, 7, 6, 3]), 9)
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
-    def test_single_element(self):
-        self.assertEqual(max_integer([7]), 7)
+    @property
+    def height(self):
+        return self.__height
 
-    def test_negative_numbers(self):
-        self.assertEqual(max_integer([-3, -2, -1, -5]), -1)
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
-    def test_mixed_positive_and_negative(self):
-        self.assertEqual(max_integer([-10, 20, -30, 40, 0]), 40)
+    def area(self):
+        return self.__width * self.__height
 
-    def test_all_equal_elements(self):
-        self.assertEqual(max_integer([3, 3, 3, 3]), 3)
+    def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
 
-    def test_empty_list(self):
-        self.assertIsNone(max_integer([]))
+    def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join([str(self.print_symbol) * self.__width for _ in range(self.__height)])
 
-    def test_floats(self):
-        self.assertEqual(max_integer([1.5, 2.3, 3.7, 2.8]), 3.7)
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
-    def test_mixed_ints_and_floats(self):
-        self.assertEqual(max_integer([1, 2.5, 3, 4.5]), 4.5)
+    def __del__(self):
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
-    def test_string_input(self):
-        self.assertEqual(max_integer("hello"), "o")
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
 
-    def test_list_of_strings(self):
-        self.assertEqual(max_integer(["apple", "banana", "cherry"]), "cherry")
-
-    def test_list_with_none(self):
-        with self.assertRaises(TypeError):
-            max_integer([1, 2, None])
-
-    def test_list_with_mixed_types(self):
-        with self.assertRaises(TypeError):
-            max_integer([1, "two", 3])
-
-
-if __name__ == '__main__':
-    unittest.main()
+    @classmethod
+    def square(cls, size=0):
+        return cls(size, size)
