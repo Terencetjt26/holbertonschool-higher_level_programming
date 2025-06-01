@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class based on 8-rectangle with area and string representation."""
+"""Defines a Rectangle class based on 8-rectangle with area andstring representation."""
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
