@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Defines abstract Shape class and its Circle and Rectangle implementations using duck typing."""
+"""Defines abstract Shape class and its Circle and Rectangle
+
+implementations using duck typing.
+"""
 
 from abc import ABC, abstractmethod
 import math
