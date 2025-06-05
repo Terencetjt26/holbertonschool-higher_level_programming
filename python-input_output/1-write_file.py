@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""Define a function to write a file"""
+
+
 def write_file(filename="", text=""):
-    with open(filename, "w", encoding="utf-8") as f:
-        return f.write(text)
+    """Function to write in a file"""
+
+    with open(filename, "w") as f:
+        write_f = f.write(text)
+        return write_f
