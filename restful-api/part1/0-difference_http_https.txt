@@ -1,0 +1,21 @@
+HTTP vs HTTPS
+
+1. Security:
+   - HTTP: No encryption. Data is visible during transmission.
+   - HTTPS: Data is encrypted using SSL/TLS, protecting it from interception and tampering.
+
+2. Port:
+   - HTTP uses port 80.
+   - HTTPS uses port 443.
+
+3. URL Scheme:
+   - HTTP: http://example.com
+   - HTTPS: https://example.com
+
+4. Certificates:
+   - HTTP does not require any certificate.
+   - HTTPS requires an SSL/TLS certificate issued by a Certificate Authority.
+
+5. Use Cases:
+   - HTTP: Static websites or non-sensitive content.
+   - HTTPS: Login forms, payment systems, and any site handling user data.
