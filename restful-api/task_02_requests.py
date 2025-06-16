@@ -25,7 +25,9 @@ def fetch_and_save_posts():
 
     try:
         response = requests.get(url)
-        response.raise_for_status()
+		if response.status_code != 200:
+			print("Fetch fail")
+			return
 
         posts = response.json()
         data = [{"id": post["id"], "title": post["title"], "body": post["body"]} for post in posts]
