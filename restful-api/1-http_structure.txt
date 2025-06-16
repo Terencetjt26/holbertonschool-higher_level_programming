@@ -1,0 +1,19 @@
+Example HTTP Request:
+GET /page HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+
+Example HTTP Response:
+HTTP/1.1 200 OK
+Date: Mon, 16 Jun 2025 10:00:00 GMT
+Server: nginx
+Content-Type: text/html; charset=UTF-8
+Content-Length: 512
+
+<html>...</html>
+
+Key Parts:
+- Request line: Method, path, HTTP version
+- Headers: Key-value metadata
+- Body: (optional) for POST, PUT, etc.

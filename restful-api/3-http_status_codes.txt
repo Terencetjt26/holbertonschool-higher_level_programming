@@ -1,0 +1,21 @@
+Common HTTP Status Codes:
+
+1. 200 OK
+   - Description: The request was successful.
+   - Scenario: Webpage loads normally.
+
+2. 301 Moved Permanently
+   - Description: The resource has a new permanent URL.
+   - Scenario: Redirection to a new site address.
+
+3. 400 Bad Request
+   - Description: The request is malformed.
+   - Scenario: Invalid query parameters or syntax.
+
+4. 404 Not Found
+   - Description: The requested resource doesn't exist.
+   - Scenario: Typo in URL or deleted page.
+
+5. 500 Internal Server Error
+   - Description: The server encountered an error.
+   - Scenario: Bug in server code or misconfiguration.

@@ -1,0 +1,17 @@
+Common HTTP Methods:
+
+1. GET
+   - Description: Request data from a resource.
+   - Use case: Load a webpage.
+
+2. POST
+   - Description: Submit data to a server to create a resource.
+   - Use case: Submit a login form.
+
+3. PUT
+   - Description: Update or create a resource.
+   - Use case: Edit a blog post.
+
+4. DELETE
+   - Description: Remove a resource from the server.
+   - Use case: Delete a comment or account.
